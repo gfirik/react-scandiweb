@@ -24,6 +24,7 @@ export default function Home() {
                                 name={product.name}
                                 prices={[product.prices]}
                                 inStock={product.inStock}
+                                category={category.name}
                             />
                         ))}
                     </ProductCards>

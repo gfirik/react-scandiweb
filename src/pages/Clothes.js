@@ -25,6 +25,7 @@ export default function Clothes() {
                                 name={product.name}
                                 prices={[product.prices]}
                                 inStock={product.inStock}
+                                category={category.name}
                             />
                         ))}
                     </ProductCards>
