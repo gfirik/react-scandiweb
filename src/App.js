@@ -9,10 +9,11 @@ import {
   Route,
 } from "react-router-dom";
 import styled from 'styled-components';
-import Home from './components/Home';
+import Home from './pages/Home';
 import Clothes from './pages/Clothes';
 import Tech from './pages/Tech';
 import Footer from './components/Footer';
+import ProductPage from './pages/ProductPage';
 
 export default function App() {
   const { loading, error, data } = useQuery(CATEGORIES);
@@ -28,6 +29,8 @@ export default function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/clothes" element={<Clothes/>} />
           <Route path="/tech" element={<Tech/>} />
+          <Route path="/clothes/:productId" element={<ProductPage/>}/>
+          <Route path="/tech/:productId" element={<ProductPage/>}/>
         </Routes>
       </Container>
       <Footer />

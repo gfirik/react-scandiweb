@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/client';
 import { CATEGORIES } from '../schema';
 import styled from "styled-components";
 
-
 export default function Tech() {
 
     const { loading, error, data } = useQuery(CATEGORIES);

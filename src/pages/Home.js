@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client'
-import { CATEGORIES } from './../schema';
-import Product from './Product';
+import { CATEGORIES } from '../schema';
+import Product from '../components/Product';
 import styled from 'styled-components';
 
 export default function Home() {
