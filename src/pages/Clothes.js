@@ -24,6 +24,8 @@ export default function Clothes() {
                                 image={[product.gallery]}
                                 name={product.name}
                                 prices={[product.prices]}
+                                currency={product.prices[0].currency}
+                                amount={product.prices[0].amount}
                                 inStock={product.inStock}
                                 category={category.name}
                             />
@@ -37,7 +39,7 @@ export default function Clothes() {
 
 const Container = styled.div`
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 5rem auto;
     width: 100%;
     display: flex;
     flex-direction: column;

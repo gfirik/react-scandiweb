@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 
-export default function Product({ category, id, image, name, prices, inStock }) {
+export default function Product({ category, id, image, name, prices, currency, amount, inStock }) {
 
     const [product, setProduct] = useState(null);
     const showProductPage = (product) => {
@@ -17,21 +17,17 @@ export default function Product({ category, id, image, name, prices, inStock }) 
             <Link to={`/${category}/${id}`}>
                 <img src={image} alt={name} />
                 <h3>{name}</h3>
-                <h4>{prices ? 
-                    prices.map((price) => (
-                        <span key={price.currency}>
-                            {price.currency} {price.amount}
-                            
-                        </span>
-                    )) : <h1>$0.00</h1>}
-                </h4>
-                {!inStock ? <h5>Out of Stock</h5> 
-                : 
-                <button
-                    onClick={() =>{ showProductPage(product); }}
-                >
-                    <BsCart size={20}/>
-                </button> }
+                <h4>{currency}{amount}</h4>
+                {
+                    !inStock ? 
+                    <h5>Out of Stock</h5> 
+                    : 
+                    <button
+                        onClick={() =>{ showProductPage(product); }}
+                    >
+                        <BsCart size={20}/>
+                    </button> 
+                }
             </Link>
         </Card>
     )
@@ -66,6 +62,7 @@ const Card = styled.div`
         h4 {
             font-size: 1.2rem;
             font-weight: bold;
+            color: #1d1f22;
         }
         h5 {
             position: absolute;
