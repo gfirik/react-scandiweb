@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import './../index.css';
 import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { BsCart } from 'react-icons/bs';
+import Overlay from './Overlay';
 
 export default function Navbar({ data }) {
 
@@ -11,6 +12,8 @@ export default function Navbar({ data }) {
         activeObject:  'all',
         objects: ['all', 'clothes', 'tech']
     });
+
+    const [showCart, setShowCart] = useState(false);
 
     return (
         <NavbarContainer>
@@ -38,7 +41,7 @@ export default function Navbar({ data }) {
                 </Link>
             </NavIcon>
             
-            {/* Currency Toggler & Cart Icon */}
+            {/* Currency Toggler & Cart Icon & Cart Overlay */}
             <NavRight>
                 <div>
                     <select>
@@ -52,9 +55,12 @@ export default function Navbar({ data }) {
                         }
                     </select>
                 </div>
-                <div>
+                <div 
+                    onClick={() => setShowCart(!showCart)}
+                >
                     <BsCart size={24} />
-                    <span className='nav-num'>0</span>
+                    <span>0</span>
+                    {showCart && <Overlay />}
                 </div>
             </NavRight>
         </NavbarContainer>
@@ -71,7 +77,7 @@ const NavbarContainer = styled.nav`
     top: 0;
     left: 0;
     background-color: #fff;
-    z-index: 1111;
+    z-index: 11;
     box-shadow: 0px 0px 1px #000;
     text-transform: uppercase;
 `;
@@ -102,7 +108,7 @@ const NavRight = styled.div`
         margin: 0 1rem;
         cursor: pointer;
         position: relative;
-        .nav-num {
+        span {
             position: absolute;
             width: 1.4rem;
             height: 1.4rem;

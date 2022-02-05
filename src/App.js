@@ -14,6 +14,7 @@ import Clothes from './pages/Clothes';
 import Tech from './pages/Tech';
 import Footer from './components/Footer';
 import ProductPage from './pages/ProductPage';
+import Cart from './pages/Cart';
 
 export default function App() {
   const { loading, error, data } = useQuery(CATEGORIES);
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/tech" element={<Tech/>} />
           <Route path="/clothes/:productId" element={<ProductPage/>}/>
           <Route path="/tech/:productId" element={<ProductPage/>}/>
+          <Route path="/cart" element={<Cart/>} />
         </Routes>
       </Container>
       <Footer />
@@ -42,6 +44,5 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
   color: #1d1f22;
 `;

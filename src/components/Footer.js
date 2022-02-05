@@ -8,7 +8,7 @@ export default function Footer() {
                 <Link to='/'>Home</Link>
                 <Link to='/clothes'>Clothes</Link>
                 <Link to='/tech'>Tech</Link>
-                <Link to='/'>Cart</Link>
+                <Link to='/cart'>Cart</Link>
             </Left>
             <div>Ⓒ 2022</div>           
         </Container>
