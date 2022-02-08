@@ -1,10 +1,10 @@
-import Product from "../components/Product";
+import Product from "../Layout/Product";
 import { useQuery } from '@apollo/client';
-import { CATEGORIES } from '../schema';
+import { CATEGORIES } from '../../schema';
 import styled from "styled-components";
 
-export default function Clothes() {
-    
+export default function Tech() {
+
     const { loading, error, data } = useQuery(CATEGORIES);
 
     if (loading) return <p>Loading...</p>;
@@ -12,7 +12,7 @@ export default function Clothes() {
 
     return (
         <Container>
-            {data.categories.filter(category => category.name === "clothes")
+            {data.categories.filter(category => category.name === "tech")
                 .map((category) => (
                 <ProductFeed key={category.name}>
                     <h2>{category.name}</h2>

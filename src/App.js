@@ -1,20 +1,16 @@
-import './index.css';
-import React from 'react';
-import { useQuery } from '@apollo/client'
-import { CATEGORIES } from './schema';
-import Navbar from './components/Navbar';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import styled from 'styled-components';
-import Home from './pages/Home';
-import Clothes from './pages/Clothes';
-import Tech from './pages/Tech';
-import Footer from './components/Footer';
-import ProductPage from './pages/ProductPage';
-import Cart from './pages/Cart';
+import "./index.css";
+import React from "react";
+import { useQuery } from "@apollo/client";
+import { CATEGORIES } from "./schema";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import styled from "styled-components";
+import Home from "./components/pages/Home";
+import Navbar from "./components/Layout/Navbar";
+import Footer from "./components/Layout/Footer";
+import Clothes from "./components/pages/Clothes";
+import Tech from "./components/pages/Tech";
+import ProductPage from "./components/pages/ProductPage";
+import Cart from "./components/Cart/Cart";
 
 export default function App() {
   const { loading, error, data } = useQuery(CATEGORIES);
@@ -25,14 +21,14 @@ export default function App() {
       <Navbar data={data} />
       <Container>
         <Routes>
-        {/* I tried to use filter to filter the data and then map over it to get the products, but it didn't work. 
+          {/* I tried to use filter to filter the data and then map over it to get the products, but it didn't work. 
           I'm not sure why, but I'm going to leave it here for now and use router element attributes. */}
-          <Route path="/" element={<Home/>} />
-          <Route path="/clothes" element={<Clothes/>} />
-          <Route path="/tech" element={<Tech/>} />
-          <Route path="/clothes/:productId" element={<ProductPage/>}/>
-          <Route path="/tech/:productId" element={<ProductPage/>}/>
-          <Route path="/cart" element={<Cart/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/clothes" element={<Clothes />} />
+          <Route path="/tech" element={<Tech />} />
+          <Route path="/clothes/:productId" element={<ProductPage />} />
+          <Route path="/tech/:productId" element={<ProductPage />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Container>
       <Footer />
