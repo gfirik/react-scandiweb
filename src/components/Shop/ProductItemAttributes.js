@@ -35,6 +35,12 @@ const Attributes = styled.label`
   min-width: 2rem;
   min-height: 1rem;
   text-align: center;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #1d1f22;
+    color: #fff;
+    box-shadow: 0px 2px 4px #1d1f22;
+  }
   input {
     display: none;
   }

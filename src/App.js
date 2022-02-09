@@ -1,7 +1,7 @@
 import "./index.css";
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { CATEGORIES } from "./schema";
+import { CATEGORIES } from "./query/schema";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import Home from "./components/pages/Home";

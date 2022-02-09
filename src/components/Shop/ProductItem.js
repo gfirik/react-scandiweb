@@ -3,12 +3,13 @@ import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { basketActions } from "../../store/basketSlice";
 import ProductItemAttributes from "./ProductItemAttributes";
+import GetCurrencySymbol from "../functions/currency";
 
 const ProductItem = (props) => {
   const { attributes, prices, id, inStock } = props.product;
   const [selectedAttr, setSelectedAttr] = useState(null);
   const dispatch = useDispatch();
-  console.log(props.product);
+  // console.log(props.product);
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(
@@ -48,7 +49,7 @@ const ProductItem = (props) => {
       <div>
         <h3>Price:</h3>
         <h3>
-          {prices[0].currency}
+          {GetCurrencySymbol(prices[0].currency)}
           {prices[0].amount}
         </h3>
       </div>

@@ -6,6 +6,7 @@ import { RiShoppingBag3Fill } from "react-icons/ri";
 import { BsCart } from "react-icons/bs";
 import Overlay from "./Overlay";
 import { useSelector } from "react-redux";
+import GetCurrencySymbol from "../functions/currency";
 
 export default function Navbar({ data }) {
   const [activeCategory, setActiveCategory] = useState({
@@ -41,9 +42,9 @@ export default function Navbar({ data }) {
         ))}
       </NavLeft>
 
-      {/* Home Page Navigation Button & Logo */}
+      {/* Navigation to the Cart page */}
       <NavIcon>
-        <Link to="/">
+        <Link to="/cart">
           <RiShoppingBag3Fill size={50} />
         </Link>
       </NavIcon>
@@ -53,7 +54,7 @@ export default function Navbar({ data }) {
         <div>
           <select>
             {data.currencies.map((currency) => (
-              <option key={currency}>{currency}</option>
+              <option key={currency}>{GetCurrencySymbol(currency)}</option>
             ))}
           </select>
         </div>
@@ -106,8 +107,8 @@ const NavRight = styled.div`
   align-items: center;
   div {
     margin: 0 1rem;
-    cursor: pointer;
     position: relative;
+    cursor: pointer;
     span {
       position: absolute;
       width: 1.4rem;
@@ -118,6 +119,7 @@ const NavRight = styled.div`
       color: #fff;
       border-radius: 50%;
       top: -0.5rem;
+      cursor: pointer;
       right: -0.5rem;
     }
   }

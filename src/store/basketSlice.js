@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   items: [],
   totalQuantity: 0,
+  totalAmount: 0,
+  currency: "USD",
 };
 
 const basketSlice = createSlice({
@@ -20,16 +22,19 @@ const basketSlice = createSlice({
           amount: newItem.amount,
           currency: newItem.currency,
           quantity: newItem.quantity,
-          totalPrice: newItem.totalPrice,
+          totalPrice: newItem.amount,
           selectedAttr: newItem.selectedAttr,
+          selectedAttrs: [newItem.selectedAttr],
           attributes: newItem.attributes,
           image: newItem.image,
         });
       } else {
         existingItem.quantity += newItem.quantity;
-        existingItem.totalPrice += newItem.price;
+        existingItem.totalPrice += newItem.amount;
+        existingItem.selectedAttrs.push(newItem.selectedAttr);
       }
       state.totalQuantity++;
+      state.totalAmount += newItem.amount;
     },
 
     removeFromBasket: (state, action) => {

@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { CATEGORIES } from "../../schema";
+import { CATEGORIES } from "../../query/schema";
 import Product from "../Layout/Product";
 import styled from "styled-components";
 

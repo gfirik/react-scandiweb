@@ -1,6 +1,6 @@
 import Product from "../Layout/Product";
 import { useQuery } from "@apollo/client";
-import { CATEGORIES } from "../../schema";
+import { CATEGORIES } from "../../query/schema";
 import styled from "styled-components";
 
 export default function Clothes() {

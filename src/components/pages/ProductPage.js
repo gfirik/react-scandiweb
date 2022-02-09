@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import styled from "styled-components";
-import { CATEGORIES } from "../../schema";
-
+import { CATEGORIES } from "../../query/schema";
 import ProductItem from "../Shop/ProductItem";
 
 export default function ProductPage() {
