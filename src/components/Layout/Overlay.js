@@ -69,7 +69,7 @@ const Container = styled.section`
   width: 350px;
   height: 400px;
   top: 5rem;
-  right: 15rem;
+  right: 10rem;
   text-transform: none;
   box-shadow: 0px 1px 1px 0 #000;
   overflow-y: scroll;
