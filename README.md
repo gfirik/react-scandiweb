@@ -6,4 +6,4 @@ To run the app do the followings:
 - npm install
 - npm start
 
-And make sure that backend app is also working on localhost://4000/
+And make sure that backend is also working on localhost://4000/
