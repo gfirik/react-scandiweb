@@ -17,7 +17,7 @@ const ProductItem = (props) => {
         id,
         name: props.product.name,
         amount: prices[0].amount,
-        currency: prices[0].currency,
+        currencySymbol: prices[0].currency.symbol,
         quantity: 1,
         selectedAttr: selectedAttr,
         image: props.product.gallery[0],

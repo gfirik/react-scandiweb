@@ -6,7 +6,6 @@ import { RiShoppingBag3Fill } from "react-icons/ri";
 import { BsCart } from "react-icons/bs";
 import Overlay from "./Overlay";
 import { useSelector } from "react-redux";
-import GetCurrencySymbol from "../functions/currency";
 
 export default function Navbar({ data }) {
   const [activeCategory, setActiveCategory] = useState({
@@ -53,8 +52,8 @@ export default function Navbar({ data }) {
       <NavRight>
         <div>
           <select>
-            {data.currencies.map((currency) => (
-              <option key={currency}>{GetCurrencySymbol(currency)}</option>
+            {data.currencies.map((currency, index) => (
+              <option key={index}>{currency.symbol}</option>
             ))}
           </select>
         </div>

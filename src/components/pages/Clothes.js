@@ -21,7 +21,7 @@ export default function Clothes() {
                 <Product
                   key={product.id}
                   id={product.id}
-                  image={[product.gallery]}
+                  image={[product.gallery[0]]}
                   name={product.name}
                   prices={[product.prices]}
                   currency={product.prices[0].currency}

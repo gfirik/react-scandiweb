@@ -28,9 +28,9 @@ export default function Cart() {
               </h4>
               <div>
                 {item.selectedAttrs
-                  ? item.selectedAttrs.map((attr) => (
+                  ? item.selectedAttrs.map((attr, index) => (
                       <button
-                        key={attr}
+                        key={index}
                         style={
                           String(attr).charAt(0) === "#"
                             ? { background: attr }

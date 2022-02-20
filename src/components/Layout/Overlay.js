@@ -23,9 +23,9 @@ export default function Overlay() {
               </h4>
               <Attributes>
                 {item.selectedAttrs
-                  ? item.selectedAttrs.map((attr) => (
+                  ? item.selectedAttrs.map((attr, index) => (
                       <button
-                        key={attr}
+                        key={index}
                         style={
                           String(attr).charAt(0) === "#"
                             ? { background: attr }
@@ -67,7 +67,7 @@ export default function Overlay() {
 const Container = styled.section`
   position: fixed;
   width: 350px;
-  height: 400px;
+  max-height: 400px;
   top: 5rem;
   right: 10rem;
   text-transform: none;

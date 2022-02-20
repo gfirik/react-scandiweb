@@ -8,8 +8,8 @@ export const CATEGORIES = gql`
         id
         name
         inStock
-        description
         gallery
+        description
         category
         attributes {
           id
@@ -22,12 +22,18 @@ export const CATEGORIES = gql`
           }
         }
         prices {
-          currency
+          currency {
+            label
+            symbol
+          }
           amount
         }
         brand
       }
     }
-    currencies
+    currencies {
+      label
+      symbol
+    }
   }
 `;

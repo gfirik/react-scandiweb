@@ -63,6 +63,8 @@ const Card = styled.div`
   a {
     text-decoration: none;
     color: #1d1f22;
+    width: 100%;
+    height: 100%;
     img {
       width: 100%;
       height: 75%;

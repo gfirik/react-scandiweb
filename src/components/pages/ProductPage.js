@@ -30,9 +30,9 @@ export default function ProductPage() {
         <ImageSelections>
           {thisProduct.products
             .filter((product) => product.id === productId)[0]
-            .gallery.map((image) => (
+            .gallery.map((image, index) => (
               <img
-                key={image}
+                key={index}
                 src={image}
                 alt={"Product"}
                 onClick={() => addImg(image)}

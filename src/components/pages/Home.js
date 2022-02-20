@@ -11,26 +11,29 @@ export default function Home() {
 
   return (
     <Container>
-      {data.categories.map((category) => (
-        <ProductFeed key={category.name}>
-          <h2>{category.name}</h2>
-          <ProductCards>
-            {category.products.map((product) => (
-              <Product
-                key={product.id}
-                id={product.id}
-                image={[product.gallery]}
-                name={product.name}
-                prices={[product.prices]}
-                currency={product.prices[0].currency}
-                amount={product.prices[0].amount}
-                inStock={product.inStock}
-                category={category.name}
-              />
-            ))}
-          </ProductCards>
-        </ProductFeed>
-      ))}
+      {data.categories.map(
+        (category) =>
+          category.name === "all" && (
+            <ProductFeed key={category.name}>
+              <h2>{category.name}</h2>
+              <ProductCards>
+                {category.products.map((product) => (
+                  <Product
+                    key={product.id}
+                    id={product.id}
+                    image={[product.gallery[0]]}
+                    name={product.name}
+                    prices={[product.prices]}
+                    currency={product.prices[0].currency}
+                    amount={product.prices[0].amount}
+                    inStock={product.inStock}
+                    category={category.name}
+                  />
+                ))}
+              </ProductCards>
+            </ProductFeed>
+          )
+      )}
     </Container>
   );
 }
